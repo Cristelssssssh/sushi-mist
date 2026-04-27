@@ -2,160 +2,171 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Sushi Mist Delivery</title>
+<title>Sushi Mist</title>
 
 <style>
 
-/* PALETA KYOTO LLUVIA */
+/* PALETA KYOTO */
+
+:root {
+--matcha: #6b7f6a;
+--musgo: #3e4f4f;
+--azul: #4a5d6b;
+--gris: #2b3438;
+}
 
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(
-        rgba(40, 60, 60, 0.85),
-        rgba(20, 30, 35, 0.95)
-    );
-    color: white;
-    overflow-x: hidden;
+margin: 0;
+font-family: system-ui, -apple-system;
+background: linear-gradient(
+rgba(20,30,35,0.92),
+rgba(10,15,18,0.95)
+),
+url("https://images.unsplash.com/photo-1526481280690-7c2a0b3bde59");
+background-size: cover;
+background-position: center;
+color: white;
+overflow-x: hidden;
 }
 
 /* LLUVIA */
 
 .rain {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-image:
-    repeating-linear-gradient(
-        transparent,
-        transparent 2px,
-        rgba(255,255,255,0.15) 3px
-    );
-    animation: rainFall 0.4s linear infinite;
-    pointer-events: none;
+position: fixed;
+width: 100%;
+height: 100%;
+pointer-events: none;
+background-image:
+repeating-linear-gradient(
+transparent,
+transparent 2px,
+rgba(255,255,255,0.15) 3px
+);
+animation: rain 0.4s linear infinite;
 }
 
-@keyframes rainFall {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 0 10px;
-    }
+@keyframes rain {
+from {background-position:0 0;}
+to {background-position:0 10px;}
 }
 
-/* LOADER SUSHI */
+/* LOADER */
 
 #loader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #1f2f2f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 999;
+position: fixed;
+width: 100%;
+height: 100%;
+background: var(--gris);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+z-index: 999;
 }
 
 .sushi {
-    font-size: 70px;
-    animation: bite 1s infinite;
+font-size: 70px;
+animation: bite 1s infinite;
 }
 
 @keyframes bite {
-    0% { transform: scale(1); }
-    50% { transform: scale(0.85); }
-    100% { transform: scale(1); }
-}
-
-.loading-text {
-    margin-top: 10px;
-    color: #c7d6c7;
+0% {transform: scale(1);}
+50% {transform: scale(0.85);}
+100% {transform: scale(1);}
 }
 
 /* HEADER */
 
 header {
-    text-align: center;
-    padding: 60px 20px;
+text-align: center;
+padding: 60px 20px 20px;
 }
 
 h1 {
-    font-size: 48px;
-    color: #dbe6d3;
-    letter-spacing: 2px;
-}
-
-.subtitle {
-    color: #9fb3a7;
-    font-size: 18px;
+font-size: 42px;
+letter-spacing: 3px;
+color: #dfe8d8;
 }
 
 /* PERSONAJE */
 
 .character {
-    font-size: 60px;
-    margin-top: 20px;
-    transition: transform 0.3s;
+position: fixed;
+bottom: 15px;
+right: 15px;
+font-size: 70px;
+transition: transform 0.3s;
 }
 
-.character.happy {
-    transform: scale(1.2);
+.character.jump {
+transform: scale(1.2);
 }
 
-/* BOTON */
+/* MENSAJE */
 
-.order-button {
-    margin-top: 30px;
-    background: #4f6f6f;
-    color: white;
-    padding: 18px 35px;
-    font-size: 20px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.order-button:hover {
-    background: #6e8f8f;
-    transform: scale(1.05);
+.bubble {
+position: fixed;
+bottom: 95px;
+right: 20px;
+background: var(--azul);
+padding: 10px 14px;
+border-radius: 12px;
+font-size: 14px;
+display: none;
 }
 
 /* MENU */
 
 .menu {
-    padding: 30px;
-    text-align: center;
+padding: 15px;
 }
 
-.item {
-    background: rgba(255,255,255,0.05);
-    margin: 15px auto;
-    padding: 18px;
-    width: 90%;
-    border-radius: 12px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
+.card {
+background: rgba(255,255,255,0.06);
+margin: 12px 0;
+padding: 18px;
+border-radius: 14px;
+font-size: 18px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: 0.2s;
 }
 
-.item:hover {
-    background: rgba(255,255,255,0.12);
-    transform: scale(1.03);
+.card:hover {
+background: rgba(255,255,255,0.15);
 }
+
+.add {
+background: var(--matcha);
+border: none;
+color: white;
+padding: 10px 16px;
+border-radius: 10px;
+font-size: 16px;
+cursor: pointer;
+}
+
+/* CARRITO */
 
 .cart {
-    margin-top: 20px;
-    font-size: 20px;
-    color: #cdddc7;
+position: sticky;
+bottom: 0;
+background: rgba(0,0,0,0.85);
+padding: 15px;
+text-align: center;
+font-size: 18px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #9fb3a7;
+.order {
+margin-top: 10px;
+background: #25D366;
+border: none;
+padding: 14px 28px;
+font-size: 18px;
+border-radius: 12px;
+color: white;
+cursor: pointer;
 }
 
 </style>
@@ -167,78 +178,68 @@ footer {
 <div class="rain"></div>
 
 <div id="loader">
-
-<div class="sushi">
-🍣
-</div>
-
-<div class="loading-text">
-Preparando tu experiencia...
-</div>
-
+<div class="sushi">🍣</div>
+<div>Cargando experiencia...</div>
 </div>
 
 <header>
 
-<h1>
-SUSHI MIST
-</h1>
-
-<div class="subtitle">
-Delivery rápido • Sushi fresco • Kyoto en lluvia
-</div>
-
-<div id="character" class="character">
-🧒
-</div>
-
-<button class="order-button" onclick="ordenar()">
-Ordenar por WhatsApp
-</button>
+<h1>SUSHI MIST</h1>
 
 </header>
 
 <div class="menu">
 
-<div class="item" onclick="addItem('Sushi especiales')">
+<div class="card">
 🍣 Sushi especiales
+<button class="add" onclick="add('Sushi especiales')">Agregar</button>
 </div>
 
-<div class="item" onclick="addItem('Dumplings')">
+<div class="card">
 🥟 Dumplings
+<button class="add" onclick="add('Dumplings')">Agregar</button>
 </div>
 
-<div class="item" onclick="addItem('Ebi de camarón')">
+<div class="card">
 🍤 Ebi de camarón
+<button class="add" onclick="add('Ebi de camarón')">Agregar</button>
 </div>
 
-<div class="item" onclick="addItem('Onigiri')">
+<div class="card">
 🍙 Onigiri
+<button class="add" onclick="add('Onigiri')">Agregar</button>
 </div>
 
-<div class="item" onclick="addItem('Empanadas Samosa')">
+<div class="card">
 🥟 Empanadas Samosa
+<button class="add" onclick="add('Empanadas Samosa')">Agregar</button>
 </div>
 
-<div class="item" onclick="addItem('Gunkan')">
-🍣 Gunkan
 </div>
 
 <div class="cart" id="cart">
-Tu pedido: vacío
-</div>
 
-<button class="order-button" onclick="ordenar()">
-Finalizar pedido
+Tu pedido: vacío
+
+<br>
+
+<button class="order" onclick="ordenar()">
+Enviar pedido por WhatsApp
 </button>
 
 </div>
 
-<footer>
+<div class="bubble" id="bubble">
+¡Buena elección!
+</div>
 
-Sushi Mist • Delivery
+<div class="character" id="character">
+🧒
+</div>
 
-</footer>
+<audio id="sound">
+<source src="https://www.soundjay.com/buttons/sounds/button-09.mp3">
+</audio>
 
 <script>
 
@@ -250,7 +251,7 @@ setTimeout(function() {
 
 document.getElementById("loader").style.display = "none";
 
-}, 2000);
+}, 1600);
 
 }
 
@@ -258,23 +259,37 @@ document.getElementById("loader").style.display = "none";
 
 let cart = [];
 
-function addItem(item) {
+function add(item) {
 
 cart.push(item);
 
-document.getElementById("cart").innerText =
-"Tu pedido: " + cart.join(", ");
+document.getElementById("cart").innerHTML =
+"Tu pedido: " + cart.join(", ") +
+"<br><button class='order' onclick='ordenar()'>Enviar pedido por WhatsApp</button>";
 
 let character =
 document.getElementById("character");
 
-character.classList.add("happy");
+character.classList.add("jump");
 
-setTimeout(function() {
+setTimeout(() => {
+character.classList.remove("jump");
+}, 300);
 
-character.classList.remove("happy");
+/* MENSAJE */
 
-}, 500);
+let bubble =
+document.getElementById("bubble");
+
+bubble.style.display = "block";
+
+setTimeout(() => {
+bubble.style.display = "none";
+}, 1600);
+
+/* SONIDO */
+
+document.getElementById("sound").play();
 
 }
 
@@ -285,7 +300,7 @@ function ordenar() {
 let numero = "52473962";
 
 let mensaje =
-"Hola, quiero hacer un pedido en Sushi Mist: " +
+"Hola, quiero ordenar en Sushi Mist: " +
 cart.join(", ");
 
 let url =
@@ -294,7 +309,7 @@ numero +
 "?text=" +
 encodeURIComponent(mensaje);
 
-window.open(url, "_blank");
+window.open(url);
 
 }
 
