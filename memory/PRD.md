@@ -23,14 +23,12 @@ Estilo "Kyoto lluvia". Loader de sushi recibiendo mordiscos ("Preparando tu expe
 - Persistencia en MongoDB
 
 ## Implemented (Dec 2025)
-- Backend: GET /api/menu (10 platos demo), POST /api/orders (valida items vacíos), GET /api/orders (sorted desc, sin _id leak)
-- Frontend completo: Hero, MenuGrid con filtros (all/nigiri/rolls/ramen/sides/drinks), Cart drawer con inc/dec/remove, Checkout con validación, OrderConfirmation con chef bowing + auto-open wa.me
-- KyotoRain canvas (rain + lantern glows) overlay
-- ChefMascot SVG con 4 moods reactivos
-- SushiLoader SVG con 3 bocados animados
-- FlyingItem animation card→cart
-- I18nProvider ES/EN con dictionary
-- Sonner para toasts de validación
+- Backend: GET /api/menu (8 platos reales de Sushi Mist), POST /api/orders (valida items vacíos), GET /api/orders (sorted desc, sin _id leak)
+- Frontend completo: Hero con marca **Sushi Mist**, MenuGrid con 10 filtros reales (bowl/sushi/calientes/mariscos/ramen/entrantes/postres/otros/bebidas/salsas), Cart drawer con inc/dec/remove, Checkout con validación, OrderConfirmation con chef bowing + auto-open wa.me
+- Menú real: Surimist $2.000, Nigiri de Surimi $1.950, Akai Maki $2.500, Gunkan Su $1.950, Kumo Roll $1.700, Midori Roll $1.850, Sakura Beef Roll $2.200, Wakame Sumo Bowl $1.700
+- Placeholder SVG dentro de las cards cuando `image` está vacío — usuario reemplaza directamente en GitHub
+- Formato de precio con separador de miles (es-ES): $2.000
+- KyotoRain canvas + chef mascota + sushi loader + flying item + i18n ES/EN intactos
 - 100% backend tests, 100% frontend tests passed (testing_agent_v3 iteration 1)
 
 ## Backlog

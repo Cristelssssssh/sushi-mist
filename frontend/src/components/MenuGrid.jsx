@@ -3,7 +3,19 @@ import MenuCard from "./MenuCard";
 import { useI18n } from "../i18n";
 import { motion } from "framer-motion";
 
-const CATEGORIES = ["all", "nigiri", "rolls", "ramen", "sides", "drinks"];
+const CATEGORIES = [
+  "all",
+  "bowl",
+  "sushi",
+  "calientes",
+  "mariscos",
+  "ramen",
+  "entrantes",
+  "postres",
+  "otros",
+  "bebidas",
+  "salsas",
+];
 
 const MenuGrid = ({ menu }) => {
   const { t } = useI18n();

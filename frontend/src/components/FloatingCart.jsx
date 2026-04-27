@@ -7,6 +7,7 @@ import { useI18n } from "../i18n";
 import SushiLoader from "./SushiLoader";
 import OrderConfirmation from "./OrderConfirmation";
 import { toast } from "sonner";
+import { formatPrice } from "./MenuCard";
 
 const WHATSAPP_NUMBER = "5352473962"; // Cuba +53 (no plus, wa.me format)
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
@@ -23,10 +24,10 @@ const buildWhatsAppMessage = ({ items, total, customer_name, customer_phone, add
     lines.push("");
     lines.push("*Pedido:*");
     items.forEach((i) => {
-      lines.push(`• ${i.qty} × ${i.name} — $${(i.qty * i.price).toFixed(2)}`);
+      lines.push(`• ${i.qty} × ${i.name} — $${formatPrice(i.qty * i.price)}`);
     });
     lines.push("");
-    lines.push(`*Total: $${total.toFixed(2)}*`);
+    lines.push(`*Total: $${formatPrice(total)}*`);
   } else {
     lines.push("*New Order — Sushi Mist*");
     lines.push("");
@@ -37,10 +38,10 @@ const buildWhatsAppMessage = ({ items, total, customer_name, customer_phone, add
     lines.push("");
     lines.push("*Order:*");
     items.forEach((i) => {
-      lines.push(`• ${i.qty} × ${i.name} — $${(i.qty * i.price).toFixed(2)}`);
+      lines.push(`• ${i.qty} × ${i.name} — $${formatPrice(i.qty * i.price)}`);
     });
     lines.push("");
-    lines.push(`*Total: $${total.toFixed(2)}*`);
+    lines.push(`*Total: $${formatPrice(total)}*`);
   }
   return lines.join("\n");
 };
@@ -167,7 +168,7 @@ const FloatingCart = () => {
                         <img src={it.image} alt={it.name} className="h-14 w-14 rounded-lg object-cover" />
                         <div className="min-w-0 flex-1">
                           <div className="truncate text-sm text-[#F2F3F5]">{it.name}</div>
-                          <div className="text-xs text-[#A1AAB8]">${it.price.toFixed(2)}</div>
+                          <div className="text-xs text-[#A1AAB8]">${formatPrice(it.price)}</div>
                         </div>
                         <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1">
                           <button
@@ -247,7 +248,7 @@ const FloatingCart = () => {
                       style={{ fontFamily: '"Cormorant Garamond", serif' }}
                       data-testid="cart-total"
                     >
-                      ${total.toFixed(2)}
+                      ${formatPrice(total)}
                     </span>
                   </div>
 
@@ -302,7 +303,7 @@ const FloatingCart = () => {
             <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#E65C00] text-xs font-bold text-white">
               {count}
             </span>
-            <span>{t("cart")} · ${total.toFixed(2)}</span>
+            <span>{t("cart")} · ${formatPrice(total)}</span>
           </motion.button>
         )}
       </AnimatePresence>
