@@ -14,7 +14,7 @@ const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const buildWhatsAppMessage = ({ items, total, customer_name, customer_phone, address, notes, lang }) => {
   const lines = [];
   if (lang === "es") {
-    lines.push("*Nuevo pedido — Kyoto Ame*");
+    lines.push("*Nuevo pedido — Sushi Mist*");
     lines.push("");
     lines.push(`*Cliente:* ${customer_name}`);
     lines.push(`*Teléfono:* ${customer_phone}`);
@@ -28,7 +28,7 @@ const buildWhatsAppMessage = ({ items, total, customer_name, customer_phone, add
     lines.push("");
     lines.push(`*Total: $${total.toFixed(2)}*`);
   } else {
-    lines.push("*New Order — Kyoto Ame*");
+    lines.push("*New Order — Sushi Mist*");
     lines.push("");
     lines.push(`*Customer:* ${customer_name}`);
     lines.push(`*Phone:* ${customer_phone}`);

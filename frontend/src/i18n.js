@@ -2,9 +2,9 @@ import React, { createContext, useContext, useMemo, useState } from "react";
 
 const dict = {
   es: {
-    brand: "Kyoto Ame",
+    brand: "Sushi Mist",
     tagline: "Sushi & Ramen · Delivery",
-    hero_title: "Sabor de Kyoto bajo la lluvia.",
+    hero_title: "Sabor de Kyoto entre la niebla.",
     hero_subtitle:
       "Pedidos directos por WhatsApp. Sushi recién preparado, llevado a tu puerta.",
     hero_cta: "Ver el menú",
@@ -44,7 +44,7 @@ const dict = {
     chef_smile: "¡Buena elección!",
     chef_approve: "¡Excelente elección!",
     chef_bow: "Arigatō gozaimasu",
-    footer: "Hecho con lluvia y arroz · Cuba",
+    footer: "Hecho con niebla y arroz · Cuba",
     require_items: "Añade al menos un plato antes de pedir.",
     name_required: "Por favor, ingresa tu nombre.",
     phone_required: "Por favor, ingresa tu teléfono.",
@@ -53,9 +53,9 @@ const dict = {
     qty: "Cantidad",
   },
   en: {
-    brand: "Kyoto Ame",
+    brand: "Sushi Mist",
     tagline: "Sushi & Ramen · Delivery",
-    hero_title: "A taste of Kyoto in the rain.",
+    hero_title: "A taste of Kyoto in the mist.",
     hero_subtitle:
       "Direct orders by WhatsApp. Freshly made sushi, brought to your door.",
     hero_cta: "See the menu",
@@ -95,7 +95,7 @@ const dict = {
     chef_smile: "Nice choice!",
     chef_approve: "Excellent choice!",
     chef_bow: "Arigatō gozaimasu",
-    footer: "Made with rain and rice · Cuba",
+    footer: "Made with mist and rice · Cuba",
     require_items: "Add at least one dish before ordering.",
     name_required: "Please enter your name.",
     phone_required: "Please enter your phone.",
