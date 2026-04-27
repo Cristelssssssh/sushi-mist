@@ -1,0 +1,103 @@
+{
+  "theme": "Dark",
+  "archetype": "5 (Jewel & Luxury)",
+  "aesthetic": "Kyoto Rain",
+  "typography": {
+    "headings": {
+      "font": "Cormorant Garamond",
+      "style": "Elegant, tight tracking for large text. Gives a traditional, high-end restaurant feel.",
+      "sizes": {
+        "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight",
+        "h2": "text-2xl sm:text-3xl lg:text-4xl",
+        "h3": "text-xl sm:text-2xl",
+        "h4": "text-lg sm:text-xl"
+      }
+    },
+    "body": {
+      "font": "Outfit",
+      "style": "Clean, highly readable, generous line height for contrast with elegant headings.",
+      "sizes": {
+        "base": "text-base leading-relaxed",
+        "small": "text-sm tracking-wide",
+        "overline": "text-xs tracking-[0.2em] uppercase"
+      }
+    }
+  },
+  "colors": {
+    "background": {
+      "base": "#0A0C10",
+      "surface": "#12151C",
+      "overlay": "rgba(10, 12, 16, 0.75)"
+    },
+    "primary": {
+      "base": "#E65C00",
+      "hover": "#FF7A22",
+      "glow": "rgba(230, 92, 0, 0.4)"
+    },
+    "accent": {
+      "whatsapp": "#25D366",
+      "whatsapp_hover": "#20BD5A",
+      "rain_blue": "#4A5A73"
+    },
+    "text": {
+      "primary": "#F2F3F5",
+      "secondary": "#A1AAB8",
+      "muted": "#5D6778"
+    }
+  },
+  "layout_and_spacing": {
+    "container": "max-w-7xl mx-auto px-6",
+    "menu_grid": "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+    "spacing_scale": "Generous spacing to let the dark theme breathe. Use p-8 or p-12 for content sections.",
+    "bento_cards": "Use solid dark surfaces with subtle 1px border-white/10 to avoid muddy visuals."
+  },
+  "components": {
+    "header": "Sticky navigation, backdrop-blur-xl bg-black/60, border-b border-white/10. Contains Logo and Lang Toggle.",
+    "menu_cards": "Dark flat background, 1px subtle border. Hover effect: slight lift (-translate-y-1) and image zoom. Price is prominent.",
+    "floating_cart": "Fixed at bottom-right or center-bottom. Counter badge that updates. Uses Glassmorphism.",
+    "whatsapp_button": "Pulsing animation. Changes to solid #25D366 when cart has items and user is ready to checkout."
+  },
+  "motion_and_interactions": {
+    "kyoto_rain_ambient": "Use tsParticles or a pure CSS/Framer Motion overlay to create soft, slow-falling translucent drops and glowing lantern particle effects in the hero section.",
+    "sushi_loader": "Custom SVG or CSS-drawn sushi roll. Use Framer Motion to animate a clip-path or mask simulating 'bites' being taken out. Includes text: 'Preparando tu experiencia...'",
+    "add_to_cart": "Animate the sushi item 'flying' into the floating cart icon using framer-motion layoutId or calculated transforms. Add a subtle sound effect if possible, or visual pop on the cart counter.",
+    "chef_character": "Implement a stylized SVG Chef mascot in a floating widget or beside the cart. State changes: Idle (neutral) -> Smile/Approve (mouth path changes to smile, thumbs up motion) when adding item -> Bow (container rotates forward/scales down) -> Pops up '¡Excelente elección!' speech bubble.",
+    "order_confirmation": "Full screen modal/overlay with dark blurry background. Large chef SVG plays bowing animation. Prominent animated WhatsApp redirect button."
+  },
+  "image_urls": [
+    {
+      "category": "hero_background",
+      "url": "https://images.pexels.com/photos/32035911/pexels-photo-32035911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Kyoto Pontocho alleyway illuminated by traditional lanterns and light rain"
+    },
+    {
+      "category": "hero_background_alternate",
+      "url": "https://images.pexels.com/photos/32250708/pexels-photo-32250708.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Nighttime scene in Kyoto with a person holding umbrella in rain"
+    },
+    {
+      "category": "menu_sushi_1",
+      "url": "https://images.pexels.com/photos/31286785/pexels-photo-31286785.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Artistic salmon sushi"
+    },
+    {
+      "category": "menu_sushi_2",
+      "url": "https://images.pexels.com/photos/31415308/pexels-photo-31415308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Close-up of sushi rolls"
+    },
+    {
+      "category": "lantern_accent",
+      "url": "https://images.pexels.com/photos/31396236/pexels-photo-31396236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Illuminated traditional Japanese lanterns at night"
+    }
+  ],
+  "instructions_to_main_agent": [
+    "Theme: Build a dark-themed delivery site matching the Jewel & Luxury archetype. DO NOT use generic white/gray templates.",
+    "Assets: Use the provided Unsplash/Pexels URLs for images. DO NOT use placeholder text for images.",
+    "State Management: Manage cart state. Ensure the chef character reacts based on user actions (adding items).",
+    "Animations: Build the 'Sushi Loader' with Framer Motion and an SVG. Use tsParticles or Framer Motion for the 'Kyoto Rain' effect on the Hero section.",
+    "WhatsApp Integration: When the user finalizes the cart, generate a WhatsApp wa.me link with the phone number +5352473962 containing the formatted order details.",
+    "Testing: Add data-testid to ALL interactive elements (buttons, inputs, links, cart, language toggle).",
+    "Language Toggle: Add a simple ES/EN translation mechanism (dictionary/context) for main UI elements."
+  ]
+}
